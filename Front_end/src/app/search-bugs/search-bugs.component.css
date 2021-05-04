@@ -1,0 +1,85 @@
+.inputs{
+  font-family:verdana;
+  font-size:100%;
+}
+
+label {
+  width:180px;
+  clear:left;
+  text-align:right;
+  padding-right:10px;
+}
+
+input, label {
+
+  float:left;
+}
+
+
+.centre{
+  text-align: center;
+}
+
+.searchBug{
+  text-align: center;
+}
+
+.button11{
+  width: 70px;
+}
+
+button {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 250px;
+}
+
+.button1:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+thead{
+  background-color: rgb(166, 191, 197);
+}
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+footer {
+  font-size: 20px;
+  background-color: #faf3e0;
+  padding-bottom: 20px;
+}
+
+table{
+  border-collapse:collapse;
+  width:100%;
+  border: 1px solid black;
+}
+
+th,td{
+  border: 1px soild black;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(odd){
+  background-color: rgb(192, 199, 169);
+}
+
+tr,tr td:hover{
+  background-color:rgb(236, 240, 231);
+}
+
+body {
+	position: relative;
+}
+

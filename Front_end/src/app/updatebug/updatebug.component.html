@@ -1,0 +1,207 @@
+<div class="container-fluid bg-muted" style="padding-top: 10px; padding-bottom: 10px">
+  <h2 class="sectionHead">Update Bug</h2>
+</div>
+
+<div id="createNewBug" class="container tab-pane active" style="padding-bottom: 30px">
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+    <div class="bugForm">
+
+
+      <!-- Form -->
+      <!-- <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <div class="form-group form-inline">
+              <label for="Name"><b>Bug Id : </b><span style="color: red">*</span></label>
+              <div class="col-sm-9">
+                <input placeholder="Enter Bug ID" [(ngModel)]='Bug.id' type="text" class="form-control mb-2 mr-sm-2" id="bugname" name="bugname"
+                  required>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <div class="form-group form-inline">
+              <label for="uname" class="mb-2 mr-sm-2"><b>BugName :</b><span style="color: red"> * </span></label> <br>
+              <input value="something" type="text" class="form-control mb-2 mr-sm-2" id="bugname"
+                placeholder="Enter Name of Bug" name="name" (focusout)="getBugName1(Bug.name)" [(ngModel)]='Bug.name'
+                required>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group form-inline">
+            <label for="uname" class="mb-2 mr-sm-2"><b>Project ID:</b></label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="projectId" placeholder="Enter Project ID"
+              name="projectId" [(ngModel)]='Bug.projectId' required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <div class="form-group form-inline">
+              <label for="uname" class="mb-2 mr-sm-2"><b>Module : </b></label>
+              <br />
+              <input type="text" class="form-control mb-2 mr-sm-2" id="module" name="module" placeholder="Enter Module"
+                [(ngModel)]="Bug.module" required />
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group form-inline">
+            <label for="uname" class="mb-2 mr-sm-2"><b>Build Version:</b></label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="buildVersion" name="buildversion"
+              placeholder="Enter Build Version" [(ngModel)]="Bug.buildVersion" required />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <div class="form-group form-inline">
+              <label for="uname" class="mb-2 mr-sm-2"><b>Synopsis : </b></label>
+              <br />
+              <textarea rows="1" placeholder="Maximum 50" maxlength="50" cols="25" type="text"
+                class="form-control mb-2 mr-sm-2" id="synopsis" name="synopsis" [(ngModel)]="Bug.synopsis"
+                required></textarea>
+              <span class="pull-right char"><em>{{ 50 - Bug.synopsis.length }} characters left</em></span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group form-inline">
+            <label for="uname" class="mb-2 mr-sm-2"><b>Product:</b></label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="product" name="product" placeholder="Enter Product"
+              [(ngModel)]="Bug.product" required />
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <!-- <div class="col">
+        <div class="form-group">
+          <div class="form-group form-inline">
+            <label for="uname" class="mb-2 mr-sm-2"><b>Submitted On : </b></label>
+            <br />
+            <input type="date" [(ngModel)]="Bug.submittedOn" class="form-control mb-2 mr-sm-2" id="submittedOn"
+              required />
+          </div>
+        </div>
+      </div> -->
+        <div class="col">
+          <div class="form-group form-inline">
+            <label for="uname" class="mb-2 mr-sm-2"><b>ETA:</b></label>
+            <input type="date" [(ngModel)]="Bug.eta" class="form-control mb-2 mr-sm-2" id="eta" name="eta" required />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <div class="form-group form-inline">
+              <label for="uname" class="mb-2 mr-sm-2"><b>Status : </b></label>
+              <select class="custom-select custom-select mb-3" id="status" name="status" [(ngModel)]="Bug.status"
+                required>
+                <option value="NEW">NEW</option>
+                <option value="ASSIGNED">ASSIGNED</option>
+                <option value="OPEN">OPEN</option>
+                <option value="FIXED">FIXED</option>
+                <option value="PENDING_REQUEST">PENDING_RETEST</option>
+                <option value="RETEST">RETEST</option>
+                <option value="REOPEN">REOPEN</option>
+                <option value="VERIFIED">VERIFIED</option>
+                <Option value="CLOSED">CLOSED</Option>
+                <option>DUPLICATE</option>
+                <option>DEFERRED</option>
+                <option>WONT_FIX</option>
+                <option>REJECTED</option>
+                <option>NOT_A_BUG</option>
+                <option>COULD_NOT_BUG</option>
+                <option>NEED_MORE_INFO</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <div class="form-group form-inline">
+              <label for="uname" class="mb-2 mr-sm-2"><b>Severity :</b></label>
+              <select class="custom-select custom-select mb-3" id="severity" name="severity" [(ngModel)]="Bug.severity"
+                required>
+                <option>CRITICAL</option>
+                <option>MAJOR</option>
+                <option>MINOR</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+
+          <div class="form-group form-inline">
+            <label for="uname" class="mb-2 mr-sm-2"><b>Priority : </b></label>
+            <select class="custom-select custom-select mb-3" id="priority" name="priority" [(ngModel)]="Bug.priority"
+              required>
+              <option>HIGH</option>
+              <option>MEDIUM</option>
+              <option>LOW</option>
+            </select>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group form-inline">
+            <label for="uname" class="mb-2 mr-sm-2"><b>Bug Type :</b></label>
+            <select class="custom-select custom-select mb-3" id="type" name="type" [(ngModel)]="Bug.type" required>
+              <option>SYNTAX</option>
+              <option>COMPILE_TIME</option>
+              <option>RUNTIME</option>
+              <option>LOGICAL</option>
+              <option>FUNCTIONAL</option>
+              <option>CALCULATION</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-group form-inline">
+            <label for="uname" class="mb-2 mr-sm-2"><b>Description :</b>
+            </label>
+            <div class="form-group">
+              <textarea maxlength="200" class="form-control" rows="5" id="description" name="description"
+                placeholder="describe in 5 to 100 characters" [(ngModel)]="Bug.description" required></textarea>
+              <span class="pull-right char"><em>{{ 200 - Bug.description.length }} characters left</em></span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+
+        </div>
+      </div>
+
+
+      <!-- Button -->
+      <div><button type="submit" class="btn btn-warning" (click)='update()'>Update Bug</button></div><br>
+      <footer class="page-footer font-small blue" id="footer">
+        <div class="footer-copyright text-center py-3">
+          <small>© 2021 Copyright Code_with_HAT/Anubhav</small>
+        </div>
+      </footer>
+
+    </div>
+
+  </body>
